@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
+  
+  scope module: :public do
+    root "homes#top"
+    get "/about" => "homes#about"
   end
+  
   devise_for :admins
   devise_for :users
   devise_for :customers
