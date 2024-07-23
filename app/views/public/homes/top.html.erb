@@ -1,13 +1,34 @@
-<div class="container mt-5">
-<div class="row">
-  <div class="col-10 pl-5">
-    <div class="row ml-1">
-            <div class="ml-3">
-              <p class="p-2">
-                おたすとへようこそ!
-              </p>
-            </div>
+<div class="container">
+  <div class="row">
+    <div class="col-10 pl-5">
+      <div class="row justify-content-center">
+        <div class="ml-3" style="text-align: center;">
+          <p class="p-2">
+            <span style="font-size: 50px;">
+              おたすとへようこそ!
+            </span>
+          </p>
         </div>
-      </div>
+        <!-- 検索 -->
+        <div class="col-md-6 mt-3">
+          <form action="/search" method="GET" class="form-inline justify-content-center">
+            <div class="input-group w-100">
+              <input type="text" class="form-control" placeholder="キーワードを入力してください" name="q">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">検索</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- 画像1 -->
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-6 text-center">
+            <img src="https://pbs.twimg.com/media/GTLoFCKbEAA0laH?format=jpg&name=small" class="img-fluid" alt="画像の説明">
+          </div>
+        </div>
+        
+      </div>      
     </div>
+  </div>
+</div>
       
