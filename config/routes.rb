@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   scope module: :public do
     root "homes#top"
     get "/about" => "homes#about"
-    resources :posts
+    resources :posts, only:[:new, :show, :index, :create]
+    #root to: "posts#index"
   end
   
   resources :users, only: [:show]

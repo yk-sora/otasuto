@@ -5,16 +5,16 @@ class Public::PostsController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params)
-    if @image.save
-      redirect_to @image, notice: "画像が投稿されました。"
+    @posts = Post.new(posts_params)
+    if @posts.save
+      redirect_to @posts, notice: "投稿が成功しました。"
     else
       render :new
     end
   end
 
   def show
-    @image = Image.find(params[:id])
+    @posts = Post.find(params[:id])
   end
 
   def index
@@ -23,8 +23,8 @@ class Public::PostsController < ApplicationController
 
   private
 
-  def image_params
-    params.require(:image).permit(:title, :description, :image_data)
+  def posts_params
+    params.require(:post).permit(:name, :introduction, :image)
   end
 
   

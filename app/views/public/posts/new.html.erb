@@ -1,12 +1,23 @@
-<%= form_with(model: @image, local: true, html: { multipart: true }) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  
-  <%= form.label :introduction %>
-  <%= form.text_area :introduction %>
-  
-  <%= form.label :image_data %>
-  <%= form.file_field :image_data %>
-  
-  <%= form.submit "投稿する" %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <%= form_with(model: @posts, url: post_path, local: true, html: { multipart: true }) do |form| %>
+        <div class="mb-3">
+          <%= form.label :name ,"作品名", class: "form-label" %>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :introduction ,"説明", class: "form-label" %>
+          <%= form.text_area :introduction, class: "form-control" %>
+        </div>
+          
+        <div class="mb-3">
+          <%= form.label :image ,"画像を追加", class: "form-label" %>
+          <%= form.file_field :image, class: "form-control" %>
+        </div>
+          
+        <%= form.submit "投稿する", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>
