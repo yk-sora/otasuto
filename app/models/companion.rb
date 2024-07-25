@@ -1,0 +1,3 @@
+class Companion < ApplicationRecord
+  
+end
