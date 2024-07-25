@@ -1,0 +1,12 @@
+<%= form_with(model: @image, local: true, html: { multipart: true }) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  
+  <%= form.label :introduction %>
+  <%= form.text_area :introduction %>
+  
+  <%= form.label :image_data %>
+  <%= form.file_field :image_data %>
+  
+  <%= form.submit "投稿する" %>
+<% end %>
