@@ -8,10 +8,15 @@ Rails.application.routes.draw do
   scope module: :public do
     root "homes#top"
     get "/about" => "homes#about"
+    
+    get '/companions/my_page', to: 'companions#show'
+    get '/companions/information/edit', to: 'companions#edit'
+    patch '/companions/information', to: 'companions#update'
+    
     resources :posts, only:[:new, :show, :index, :create]
     #root to: "posts#index"
   end
   
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
