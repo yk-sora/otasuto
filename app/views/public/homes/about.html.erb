@@ -1,6 +1,80 @@
-<h1 style="font-size: 5em; text-align: center;">～おたスト!とは～</h1></center>
-<h5 class="mt-4" style="text-align: center;"><strong>
-  おたスト!は「イラストおたすけコミュニティサイト」の略称で、<br>
-  イラストを最近描き始めて、
-</strong></h5>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おたスト!の使い方</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .step-number {
+      font-weight: bold; /* 太字にする */
+      text-transform: uppercase; /* 大文字にする */
+    }
+    .rule-list {
+      text-align: left; /* 注意事項リストのテキストを左寄せにする */
+    }
+    .image-container {
+      display: flex;
+      justify-content: center; /* 画像を中央寄せにする */
+    }
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 中央寄せ */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row my-4">
+      <!-- 画像を左側に配置 -->
+      <div class="col-md-6 image-container">
+        <img src="https://via.placeholder.com/300" alt="サンプル画像" class="img-fluid">
+      </div>
 
+      <!-- テキストを右側に配置 -->
+      <div class="col-md-6 content-container">
+        <h1 style="font-size: 3em;">～おたスト!の使い方～</h1>
+
+        <h5 class="mt-4">
+          <span class="step-number">1.</span>
+          投稿フォームでご自身の描いたイラストと名前、<br>
+          現在どのような点で困っているかの説明文を載せ投稿!
+        </h5>
+        
+        <h5 class="mt-4">
+          <span class="step-number">2.</span>
+          投稿した内容に対して、他のユーザーさん<br>
+          からコメントやイラストが届く
+        </h5>
+        
+        <h5 class="mt-4">
+          <span class="step-number">3.</span>
+          他のユーザーさんと楽しくチャットしながら、<br>
+          自分のイラストが理想に近づけるように案を出していく!
+        </h5>
+
+        <h1 class="my-4" style="font-size: 3em;">～注意!!～</h1>
+        <h5 class="mt-4 rule-list">
+          <span class="step-number">1.</span> 
+          投稿者や他のイラストに対して暴言や不適切な<br>
+          言葉を使うことは禁止されています。<br>
+        </h5>
+        <h5 class="mt-4 rule-list">
+          <span class="step-number">2.</span> 
+          投稿者や他のイラストを不正に利用することも<br>
+          禁止されています。<br>
+        </h5>
+        <h5 class="mt-4 rule-list">
+          これらのルールに違反した場合、アカウントの停止などの<br>
+          措置を取らせていただくことがありますので、ご注意ください。
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

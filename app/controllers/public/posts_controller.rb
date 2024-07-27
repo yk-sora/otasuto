@@ -1,7 +1,7 @@
 class Public::PostsController < ApplicationController
   
   def new
-    @posts = Post.new
+    @post = Post.new
   end
 
   def create
