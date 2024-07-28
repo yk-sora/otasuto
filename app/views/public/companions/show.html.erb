@@ -5,14 +5,6 @@
       <div class="text-center" style="font-size: 24px;">プロフィール</div>
       <p id="notice"></p>
       <div class="actions">
-        <!-- 編集するボタン -->
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <div class="text-center">
-              <%= link_to "編集する", companions_information_edit_path, class: "btn btn-lg btn-success", style: "font-size: 1rem;" %>
-            </div>
-          </div>
-        </div>
 
         <p id="notice"></p>
 
@@ -34,6 +26,21 @@
           <div class="text-center">ユーザーが見つかりません。</div>
         <% end %>
         
+        <div class="row justify-content-center mt-4">
+          <div class="col-auto">
+            <div class="text-center">
+              <%= link_to "編集する", companions_information_edit_path, class: "btn btn-lg btn-success", style: "font-size: 1rem;" %>
+            </div>
+          </div>
+        </div>
+        
+        <h5></h5>
+        
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-6 text-center">
+            <%= link_to "投稿する", new_post_path, class: "btn btn-success btn-lg" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

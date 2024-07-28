@@ -10,16 +10,14 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-            <li>
-              <%= link_to user_path(current_user.id), class:"nav-link text-light" do%>
-               <i class="fa-solid fa-house"></i> 
-               Home
+            <li class="mr-4 mt-2">
+              <%= link_to companions_my_page_path, class: "btn btn-outline-secondary" do %>
+                マイページ
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do %>
-               <i class="fa-solid fa-right-from-bracket fa-solid.fa-sign-out-alt fas.fa-sign-out-alt"></i>
-               ログイン
+               ログアウト
               <% end %>
             </li>
           <% else %>

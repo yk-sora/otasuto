@@ -5,16 +5,16 @@ class Public::PostsController < ApplicationController
   end
 
   def create
-    @posts = Post.new(posts_params)
-    if @posts.save
-      redirect_to @posts, notice: "投稿が成功しました。"
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to post_path, notice: '投稿が成功しました！'
     else
       render :new
     end
   end
 
   def show
-    @posts = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def index
@@ -23,7 +23,7 @@ class Public::PostsController < ApplicationController
 
   private
 
-  def posts_params
+  def post_params
     params.require(:post).permit(:name, :introduction, :image)
   end
 
