@@ -3,6 +3,15 @@ class Public::PostsController < ApplicationController
   def new
     @post = Post.new
   end
+  
+  def show
+    @post = Post.find(params[:id])
+    @post_comment = PostComment.new
+  end
+
+  def index
+    @posts = Post.all
+  end
 
   def create
     @post = Post.new(post_params)
@@ -13,16 +22,13 @@ class Public::PostsController < ApplicationController
       render :new
     end
   end
-
-  def show
+  
+  def destroy
     @post = Post.find(params[:id])
-    @post_comment = PostComment.new
+    @post.destroy
+    redirect_to posts_path, notice: '投稿が削除されました。'
   end
-
-  def index
-    @posts = Post.all
-  end
-
+  
   private
 
   def post_params
