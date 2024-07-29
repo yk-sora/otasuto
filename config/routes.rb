@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     get '/companions/information/edit', to: 'companions#edit'
     patch '/companions/information', to: 'companions#update'
     
-    resources :posts
+    resources :posts, only: [:new, :index, :show, :create]
+    
+    resources :post_comments, only: [:create]
     #root to: "posts#index"
   end
   

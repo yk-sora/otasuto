@@ -6,8 +6,9 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
-      redirect_to post_path, notice: '投稿が成功しました！'
+      redirect_to @post, notice: '投稿が成功しました！'
     else
       render :new
     end
