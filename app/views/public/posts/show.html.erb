@@ -13,25 +13,24 @@
       <% if @post.image.attached? %>
         <%= image_tag @post.image, class: "img-fluid" %>
       <% end %>
-
-      <div class="mt-3">
-        <%= link_to '投稿一覧に戻る', posts_path, class: 'btn btn-secondary' %>
-      </div>
     </div>
   </div>
 </div>
 
 <div>
   <p>コメント件数：<%= @post.post_comments.count %></p>
-  <% @post_image.post_comments.each do |post_comment| %>
+  <% @post.post_comments.each do |post_comment| %>
     <p><%= image_tag post_comment.user.get_profile_image(100,100) %></p>
     <%= post_comment.user.name %>
     <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
   <% end %>
 </div>
 <div>
-  <%= form_with model: [@post_image, @post_comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
+  <%= form_with(model: [@post, @post_comment], local: true) do |f| %>
+  <div class="mb-3">
+    <%= f.label :content, "コメント内容", class: "form-label" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <%= f.submit "コメントを投稿", class: "btn btn-primary" %>
   <% end %>
 </div>
