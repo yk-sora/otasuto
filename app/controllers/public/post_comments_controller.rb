@@ -32,7 +32,7 @@ class Public::PostCommentsController < ApplicationController
       redirect_to @post, alert: 'コメントの投稿に失敗しました。'
     end
   end
-  
+
   def edit
     @post_comment = PostComment.find(params[:id])
   end
@@ -55,6 +55,6 @@ class Public::PostCommentsController < ApplicationController
   private
 
   def post_comment_params
-    params.require(:post_comment).permit(:content, :post_id)
+    params.require(:post_comment).permit(:content, :post_image)
   end
 end

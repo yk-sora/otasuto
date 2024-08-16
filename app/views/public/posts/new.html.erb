@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
       <%#= form_with(model: @post, local: true, html: { multipart: true }) do |form| %>
-      
+      <p id="notice"></p>
         <div class="mb-3">
           <%= form.label :name ,"作品名", class: "form-label" %>
           <%= form.text_field :name, class: "form-control" %>
