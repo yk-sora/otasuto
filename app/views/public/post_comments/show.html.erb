@@ -1,0 +1,6 @@
+<p><%= @post_comment.content %></p>
+<% if @post_comment.image.attached? %>
+  <%= image_tag @post_comment.image %>
+<% else %>
+  <p>画像はありません。</p>
+<% end %>

@@ -1,0 +1,11 @@
+<%# @post_comments.each do |comment| %>
+  <%#= comment.content %>
+<%# end %>
+
+<% if @post_comments.any? %>
+  <% @post_comments.each do |comment| %>
+    <p><%= comment.content %></p>
+  <% end %>
+<% else %>
+  <p>コメントはありません。</p>
+<% end %>

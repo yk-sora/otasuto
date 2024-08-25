@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     patch '/companions/information', to: 'companions#update'
     
     resources :posts do
-      resources :post_comments, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy, :index, :new, :show]
     end
-    #root to: "posts#index"
+    
+    #root "posts#index"
   end
   
   resources :users, only: [:show, :edit]

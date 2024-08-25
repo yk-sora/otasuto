@@ -1,0 +1,15 @@
+
+<div class="container mt-4">
+  <%= form_with(model: [@post, @post_comment], local: true, html: { multipart: true }) do |f| %>
+    <div class="mb-3">
+      <%= f.label :content, "コメント内容", class: "form-label" %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :image, "画像をアップロード", class: "form-label" %>
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.submit "コメントを投稿", class: "btn btn-primary" %>
+  <% end %>
+</div>

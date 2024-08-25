@@ -1,0 +1,12 @@
+<div class="container text-center mt-4">
+  <p>コメント件数：<%= @post.post_comments.count %></p>
+  <% @post.post_comments.each do |post_comment| %>
+    <div class="d-flex align-items-center justify-content-center mb-2">
+      <%= image_tag post_comment.user.get_profile_image(100, 100), class: "rounded-circle me-2" %>
+      <div>
+        <p><%= post_comment.user.name %> <span class="text-muted"><%= post_comment.created_at.strftime('%Y/%m/%d') %></span></p>
+        <p><%= post_comment.comment %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
